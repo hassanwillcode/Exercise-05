@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Exercise 05</title>
+    <style>
+      
+        body
+        {
+            background-color: antiquewhite;
+        }
+        
+        #div
+        {
+         display: inline;    
+        }
+        
+        fieldset
+        {
+            display: inline; 
+            width:50px;
+        }
+
+        input
+        {
+            width:70px;
+        }
+        #box
+        {
+            width: 200px;
+        }
+        
+        button
+        {
+            display:inline;
+            display: block;
+        }
+        
+       
+    </style>
+    
+    </head> 
+    <body>
+    <h2>CSS Color Displayer</h2>
+    
+        Select a number from 0 to 255 for each color value: <br>
+    <div id="div">    
+        <fieldset>
+        Red:
+  <input type="text" name="red">
+        </fieldset>
+        
+        <fieldset>
+        Green:
+  <input type="text" name="green" >
+        </fieldset>
+        
+        <fieldset>
+        Blue:
+  <input type="text" name="blue" >
+        </fieldset>
+        
+        <button id="btn">Show me the color!</button>
+        
+        <input class="res" type="reset" value="Clear all">
+        <br>
+        
+        <input type= "text" id="box">
+        
+        
+    </div>
+        
+    <script>
+		
+	let btn = document.getElementById("btn");
+	let box = document.getElementById("box"); 
+        
+	let red = document.getElementsByName("red");       
+    let green = document.getElementsByName("green");
+    let blue = document.getElementsByName("blue");
+
+	btn.addEventListener("click", clickHandler, false);
+		
+	function clickHandler() {
+		// first color channel (red) gets darker every time button is clicked
+		//box.style.backgroundColor = "rgb(" + (colorRed-=10) +);
+
+		// ES6 equivalent using template string
+		box.style.backgroundColor = `rgb( ${red}, ${green},${blue})`;		
+        
+	}	
+		
+	</script>
+        
+    </body>
+
+</html>
